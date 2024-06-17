@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOGA DAY</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwright+FR+Moderne|Baloo+Bhai:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playwright FR Moderne', cursive;
+            color: black;
+            margin: 0;
+            padding: 0;
+            background: url('image/image1.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid #ddd;
+        }
+        .left img {
+            width: 133px;
+        }
+        .left div {
+            line-height: 19px;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        .navbar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-right: 20px;
+        }
+        .navbar li a {
+            color: black;
+            text-decoration: none;
+            padding: 14px 13px;
+            font-size: 20px;
+        }
+        .navbar li a:hover, .navbar li a.active {
+            text-decoration: underline;
+            color: grey;
+        }
+        .right .btn {
+            font-family: 'Baloo Bhai', cursive;
+            margin: 0 9px;
+            background-color: black;
+            color: rgb(215, 235, 233);
+            padding: 4px 10px;
+            border: 2px solid rgb(97, 92, 92);
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .right .btn:hover {
+            background-color: rgb(72, 66, 66);
+        }
+        .container {
+            border: 2px solid green;
+            margin: 30px;
+            padding: 70px;
+            width: 60%;
+            border-radius: 30px;
+            background-color: rgba(246, 242, 242, 0.8);
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .form-group input {
+            text-align: center;
+            display: block;
+            width: 90%;
+            padding: 10px;
+            border: 2px solid black;
+            margin: 10px auto;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: 'Playwright FR Moderne', cursive;
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container button {
+            display: block;
+            width: 50%;
+            margin: 20px auto;
+            font-family: 'Baloo Bhai', cursive;
+            background-color: black;
+            color: rgb(215, 235, 233);
+            padding: 10px;
+            border: 2px solid rgb(97, 92, 92);
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: rgb(72, 66, 66);
+        }
+        .intro {
+            text-align: center;
+            margin: 30px auto;
+            font-size: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="image/IMAGE2.jpg" alt="Yoga Day Special">
+            <div>Yoga Day Special</div>
+        </div>
+        <div class="center">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="yogafit.html">Yoga and Fitness</a></li>
+                <li><a href="googleform.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn">Call Us</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <div class="intro">
+        <p>Welcome to our Yoga Day celebration! Join us for a day filled with wellness, peace, and fitness. We are excited to have you be a part of this special event in Dehradun.</p>
+    </div>
+    <div class="container" id="form-container">
+        <h1>Join us to celebrate this year's Yoga Day exclusively in Dehradun</h1>
+        <form id="yoga-form" action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="age" placeholder="Enter your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" name="gender" placeholder="Enter your Gender">
+            
+            </div> 
+            <div class="form-group">
+                <input type="text" name="telephone" placeholder="Enter your Telephone Number">
+            </div> 
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="container" id="thank-you" style="display: none;">
+        <h1>Thank You for Joining!</h1>
+        <!-- Your "Thank You" message content -->
+    </div>
+
+    <script>
+        document.getElementById("yoga-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Display the "Thank You" message
+            document.getElementById("form-container").style.display = "none";
+            document.getElementById("thank-you").style.display = "block";
+            // You can optionally perform AJAX submission here
+        });
+    </script>
+</body>
+</html>

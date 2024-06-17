@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Form</title>
+    <link rel="stylesheet" href="forms.css"> <!-- Assuming you have a separate CSS file for styling -->
+</head>
+<body>
+    <div class="form">
+        <div class="title-div">
+            <h1>Participation Form</h1>
+            <p>This is a Google form. This form will let us know your personal details.</p>
+            <p class="required">* Required</p>
+        </div>
+        <form id="form">
+            <div class="name-div">
+                <div class="name">Name: <span class="required">*</span></div>
+                <div class="input-div"><input type="text" name="name" placeholder="Your Answer"></div>
+            </div>
+            <div class="age-div">
+                <div class="age">Age: <span class="required">*</span></div>
+                <div class="input-div"><input type="text" name="age" placeholder="Your Answer"></div>
+            </div>
+            <div class="phone-div">
+                <div class="phone">Phone Number: <span class="required">*</span></div>
+                <div class="input-div"><input type="tel" name="phone" placeholder="Your Answer"></div>
+            </div>
+            <div class="consent-div">
+                <div class="consent">Willing to join us on this event? <span class="required">*</span></div>
+                <div class="input-div">
+                    <select name="consent">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="email-div">
+                <div class="email">Email: <span class="required">*</span></div>
+                <div class="input-div"><input type="email" name="email" placeholder="Your Answer"></div>
+            </div>
+            <div>
+                <input class="btn" type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="last">
+            <p class="never">Never save passwords on Google Forms.</p>
+            <h2>Google Forms</h2>
+        </div>
+    </div>
+
+    <div class="container" id="thank-you" style="display: none;">
+        <h1>Thank You for Joining!</h1>
+        <!-- Your "Thank You" message content -->
+    </div>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Display the "Thank You" message
+            document.querySelector(".form").style.display = "none";
+            document.getElementById("thank-you").style.display = "block";
+            // You can optionally perform AJAX submission here
+        });
+    </script>
+</body>
+</html>
